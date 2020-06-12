@@ -16,13 +16,15 @@ function cargarNombres(e) {
 
 // Crear Fetch
 fetch(url)
-     .then(res => res.json())
-     .then(data => {
+     .then(function(res){
+          return res.json();
+     })
+     .then(function(data){
           let html = '<h2>Artistas generados</h2>';
           html += `<ul class"lista">`;
-          data.forEach(nombre => {
+          data.topartists.artist.forEach(function(artista){
                html += `
-                    <li>${nombre.name}</li>
+                    <li><a href='${artista.url}' target="_blank">${artista.name}</a></li>
                `;
           })
           html += `</ul>`;
